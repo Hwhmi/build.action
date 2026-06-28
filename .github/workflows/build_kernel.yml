@@ -20,7 +20,7 @@ jobs:
       - name: pull kernel and complier
         run: |
           echo "拉取源码和编译器"
-          git clone https://github.com/Hwhmi/mt6891.git -b android-15  #修改内核源码地址和分支名称
+          git clone https://github.com/Hwhmi/mt6891a16.git -b lineage-23.2-ksu  #修改内核源码地址和分支名称
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
