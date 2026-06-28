@@ -40,7 +40,7 @@ case ${2} in
 build_kernel(){
 	export KBUILD_BUILD_USER="zahi0"  
 	export KBUILD_BUILD_HOST="zahi0-server"  
-	make $args chopin_user_defconfig #修改配置文件
+	make $args chopin_defconfig #修改配置文件
 	if [ $? -ne 0 ]; then
       		exit 0
         fi
@@ -84,7 +84,7 @@ CROSS_COMPILE_ARM32=$gcc_32_path"
 
 
 
-cd mt6891a12
+cd mt6891a16
 clean
 build_kernel
 cp ./out/arch/arm64/boot/Image.gz-dtb Image.gz-dtb
