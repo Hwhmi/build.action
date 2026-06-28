@@ -20,14 +20,14 @@ jobs:
       - name: pull kernel and complier
         run: |
           echo "拉取源码和编译器"
-          git clone https://github.com/Hwhmi/mt6891.git -b main  #修改内核源码地址和分支名称
+          git clone https://github.com/Hwhmi/mt6891.git -b android-15  #修改内核源码地址和分支名称
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
       - name: build kernel
         run: |
           echo "开始编译内核"
-          wget https://raw.githubusercontent.com/jsdizkcksv/build_kernel/main/build_tool.sh  #修改为fork之后的地址
+          wget https://raw.githubusercontent.com/Hwhmi/build.action/main/build_tool.sh  #修改为fork之后的地址
           chmod +x build_tool.sh
           ./build_tool.sh
       - name : upload 
@@ -35,7 +35,7 @@ jobs:
         if: always()
         with:
           name: kernel
-          path: ${{ github.workspace }}/kernel_src/Image.gz-dtb
+          path: ${{ github.workspace }}/mt6891/Image.gz-dtb
 #       - name: Release
 #         uses: softprops/action-gh-release@v1
 #         with:
