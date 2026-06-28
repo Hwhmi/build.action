@@ -20,11 +20,11 @@ jobs:
       - name: pull kernel and complier
         run: |
           echo "拉取源码和编译器"
-          git clone https://github.com/Hwhmi/mt6891a16.git -b lineage-23.2-ksu  #修改内核源码地址和分支名称
+          git clone https://github.com/Hwhmi/mt6891a12.git -b S  #修改内核源码地址和分支名称
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
-      - name: RESukisu
+      - name: ReSukisu
         run: |
           echo “拉取ReSukisu”
           curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
@@ -39,7 +39,7 @@ jobs:
         if: always()
         with:
           name: kernel
-          path: ${{ github.workspace }}/mt6891a16/Image.gz-dtb
+          path: ${{ github.workspace }}/mt6891a12/Image.gz-dtb
 #       - name: Release
 #         uses: softprops/action-gh-release@v1
 #         with:
