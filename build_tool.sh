@@ -36,14 +36,6 @@ case ${2} in
 	esac
 }
 
-clean(){
-	rm -rf out
-	mkdir out
-	make mrproper
-	make $args mrproper
-}
-
-
 
 build_kernel(){
 	export KBUILD_BUILD_USER="zahi0"  
