@@ -24,6 +24,8 @@ jobs:
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
+          echo “拉KernelSU”
+          curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
       
       - name: build kernel
         run: |
