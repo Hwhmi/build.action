@@ -24,10 +24,7 @@ jobs:
           echo "拉取源码完成"
           git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master
           echo "拉取编译器完成"
-      - name: ReSukisu
-        run: |
-          echo “拉取ReSukisu”
-          curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
+      
       - name: build kernel
         run: |
           echo "开始编译内核"
